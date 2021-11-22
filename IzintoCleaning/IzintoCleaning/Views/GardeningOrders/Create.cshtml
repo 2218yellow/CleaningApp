@@ -1,0 +1,171 @@
+﻿@model IzintoCleaning.Models.GardeningOrder
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Request</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Request Service For Gardening</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Package_ID, "Gardening Type", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Package_ID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Package_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CustID, "Your Name", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("CustID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CustID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.area, "Garden Size(sq meters)", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.area, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.area, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateOfService, "Date Of Service", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DateOfService, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DateOfService, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.areacost, "Cost Per 5 Square Meters", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.areacost, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.areacost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.cost, "Final Cost", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.cost, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="input_field">
+        <div class="input-group">
+
+
+        </div>
+        @*<textarea type="text" class="form-control" id="Physical_Address" ng-model="PropertyModel.Physical_Address" required ng-minlength="3" ng-maxlength="255" style="min-height:100px; resize:none" placeholder="Physical Address"></textarea>*@
+        <div id="locationField">
+            @Html.LabelFor(model => model.address, "Address", htmlAttributes: new { @class = "control-label col-md-2" })
+            <input id="address" name="address" placeholder="Enter your address here" required class="form-control" onFocus="geolocate()" />
+        </div>
+        <br />
+    </div>
+</div>
+    <div class="clearfix"></div>
+    <script type="text/javascript">
+                $(function () {
+                    $('a[title]').tooltip();
+                });
+    </script>
+    <script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+          address = new google.maps.places.Autocomplete(
+            @*/** @type {!HTMLInputElement} */*@(document.getElementById('address')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+          address.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+          var place = address.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+              address.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAay3hs9-BpmDIMIcmcA-KDGdqZeOEOoV8&libraries=places&callback=initAutocomplete"
+            async defer></script>
+    <script>
+                $(function () {
+                    var input = document.getElementById("address");
+                    var address = new google.maps.places.Autocomplete(input);
+
+                    $('#my-modal').modal('show');
+
+                });
+
+    </script>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="View Final Amount" name="btn1" class="btn btn-default" />
+            <input type="submit" value="Confirm Order" name="btn1" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Unpaid Requests", "Index")
+</div>
+
+<div>
+    @Html.ActionLink("Previous Orders", "PrevOrders")
+</div>

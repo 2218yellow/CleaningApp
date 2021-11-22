@@ -1,0 +1,64 @@
+﻿@model IEnumerable<IzintoCleaning.Models.GardeningOrder>
+
+<p>
+    @Html.ActionLink("Request New Service", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustName)
+        </th>
+        <th>
+            Gardening
+        </th>
+        <th>
+            Payment
+        </th>
+        <th>
+            Area
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfService)
+        </th>
+        <th>
+            Employee
+        </th>
+        <th>
+            Address
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.CustName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gardening.PackageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentstatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpmloyeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+    </tr>
+}
+
+</table>

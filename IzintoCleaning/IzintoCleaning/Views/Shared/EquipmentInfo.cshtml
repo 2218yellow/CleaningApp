@@ -1,0 +1,40 @@
+﻿@model IzintoCleaning.Models.CustomerEquipment
+
+<table>
+    <tr>
+        <td>
+            <strong>@Html.Label("Equipment Name : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.EquipType, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.Label("Equipment type : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.EquipType, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.Label("Equipment cost : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.EquipCost, new { htmlAttributes = new { @class = "form - control" } }) </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.Label("Amount to pay : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.FinalCost, new { htmlAttributes = new { @class = "form - control" } }) </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.Label("Supplied By : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.suppName, new { htmlAttributes = new { @class = "form - control" } }) </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.Label("Supplier Email : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.suppEmail, new { htmlAttributes = new { @class = "form - control" } }) </td>
+    </tr>
+</table>

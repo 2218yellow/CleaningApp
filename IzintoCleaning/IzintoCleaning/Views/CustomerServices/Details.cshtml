@@ -1,0 +1,74 @@
+﻿@*@model IzintoCleaning.Models.CustomerService
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customer.CustName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer.CustName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceDesc.CritName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceDesc.CritName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerCodeCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerCodeCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

@@ -1,0 +1,58 @@
+﻿@model IzintoCleaning.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin.AdminName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin.AdminName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Service.SerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.SerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostClosingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostClosingDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

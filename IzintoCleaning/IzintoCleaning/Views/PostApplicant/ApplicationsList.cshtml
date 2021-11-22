@@ -1,0 +1,69 @@
+﻿@model IEnumerable<IzintoCleaning.Models.ApplicationsVM>
+
+@{
+    ViewBag.Title = "ApplicationsList";
+}
+
+<h2>ApplicationsList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AppName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppAdd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostClosingDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppAdd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostClosingDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AppID }) |
+            @Html.ActionLink("Details", "Details", "Applicants", new { id=item.AppID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AppID })
+        </td>
+    </tr>
+}
+
+</table>

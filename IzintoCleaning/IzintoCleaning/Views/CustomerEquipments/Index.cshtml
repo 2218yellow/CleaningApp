@@ -1,0 +1,64 @@
+﻿@model IEnumerable<IzintoCleaning.Models.CustomerEquipment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customer.CustName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.equipment.EquipName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EquipCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EquipType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalCost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer.CustName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.equipment.EquipName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquipCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquipType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinalCost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TransID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TransID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TransID })
+        </td>
+    </tr>
+}
+
+</table>

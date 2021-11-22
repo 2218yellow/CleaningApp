@@ -1,0 +1,50 @@
+﻿@model IzintoCleaning.Models.Admin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Admin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminPhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminPhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdminID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

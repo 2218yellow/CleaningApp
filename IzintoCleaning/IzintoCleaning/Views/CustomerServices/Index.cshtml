@@ -1,0 +1,76 @@
+﻿@*@model IEnumerable<IzintoCleaning.Models.CustomerService>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customer.CustName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceDesc.CritName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerCodeCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.employee.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer.CustName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceDesc.CritName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerCodeCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinalCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empStatus)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Assign Employee", "Edit", new { id = item.TransID }) |                                                                                  
+            @Html.ActionLink("Details", "Details", new { id = item.TransID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TransID })
+        </td>
+    </tr>
+}
+
+</table>*@

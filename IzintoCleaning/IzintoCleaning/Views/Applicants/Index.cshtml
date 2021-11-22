@@ -1,0 +1,60 @@
+﻿@model IEnumerable<IzintoCleaning.Models.Applicant>
+
+@{
+    ViewBag.Title = "Applicant List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ApplicantsList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AppName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppAdd)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => item.AppName)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.AppSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.AppEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.AppPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.AppAdd)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AppID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AppID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AppID })
+            </td>
+        </tr>
+    }
+
+</table>
+

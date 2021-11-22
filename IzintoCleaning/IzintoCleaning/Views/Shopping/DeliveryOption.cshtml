@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Delivery Option";
+}
+
+
+<div class="row">
+
+    <form method="post">
+        <div>
+            <label><input type="radio" name="colorRadio" value="Collect"> Collect at warehouse</label>
+            <label><input type="radio" name="colorRadio" value="StandardDelivery"> Standard Delivery</label>
+        </div>
+        <br />
+        <div class="Collect box" hidden="">
+            <br />
+            Collect your order at WareJouse.
+            <br />
+            <i class="fa fa-map-marker"></i>  123 Sept St, Durban, 4001
+            <br />
+            <i class="fa fa-clock-o"></i>  Monday - Friday
+            <br />
+            <i class="fa fa-clock-o"></i>  8:30 am - 18:00 pm working hours
+            <br />
+            <a href="@Url.Action("PlaceOrder","Shopping", new {id = "collect" })" class="btn btn-default"> Continue</a>
+        </div>
+
+        <div class="StandardDelivery box col-md-4" hidden>
+            Delivery Address
+            <br />
+
+            <table class="table">
+                <tr>
+                    <td>Street</td>
+                    <td><input type="text" class="form-control" name="Street" required="required" placeholder="Street " /></td>
+                </tr>
+                <tr>
+                    <td>City/Town</td>
+                    <td><input type="text" class="form-control" name="City" required="required" placeholder="City/Town " /></td>
+                </tr>
+                <tr>
+                    <td>Postal Code</td>
+                    <td><input type="text" class="form-control" name="PostalCode" required="required" placeholder="Postal Code " /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" class="btn btn-default" value="Continue" /></td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $('input[type="radio"]').click(function(){
+
+            var inputValue = $(this).attr("value");
+
+            var targetBox = $("." + inputValue);
+
+            $(".box").not(targetBox).hide();
+
+            $(targetBox).show();
+        });
+    });
+
+</script>

@@ -1,0 +1,50 @@
+﻿@model IzintoCleaning.Models.ServiceDesc
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ServiceDesc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Service.SerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.SerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CritName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CritName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CritCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CritCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerBasic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerBasic)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DescID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

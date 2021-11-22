@@ -1,0 +1,70 @@
+﻿@model IEnumerable<IzintoCleaning.Models.Equipment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage Your Equipment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Added By
+        </th>
+        <th>
+            Supplier
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Used For
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityInStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.admin.AdminName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supplier.SuppName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquipName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquipType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquipCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityInStock)
+        </td>
+        <td>
+            <a><img src="data:image/png;base64,@Convert.ToBase64String(item.Picture, 0, item.Picture.Length)" style="width: 40px; height: 40px" alt="" /></a>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EquipID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EquipID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EquipID })
+        </td>
+    </tr>
+}
+
+</table>

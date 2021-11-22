@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="themeSlider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#themeSlider" data-slide-to="1"></li>
+        <li data-target="#themeSlider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="imgOverlay"></div>
+            <img style="height:600px;width:100%" src="../Images/Clean.jpg" alt="First slide">
+            <div class="carousel-caption">
+                <h3>Cleaning</h3>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height:600px;width:100%" src="../Images/garden.jpg" alt="Second slide">
+            <div class="carousel-caption">
+                <h3>Gardening</h3>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height:600px;width:100%" src="../Images/fumigation.jpg" alt="Third slide">
+            <div class="carousel-caption">
+                <h3>Fumigation</h3>
+
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#themeSlider" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#themeSlider" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Our Products</h2>
+        </div>
+    </div>
+</div>
+<div class="col product-container">
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item" style="height:300px">
+
+            <img class="img-responsive" title="Click to View Product detail"
+                 style="cursor:pointer;height:160px;width:100%"
+                 src="~/Images/broom.jpg" />
+
+            <div class="caption">
+                <h5>@Html.ActionLink("Request Cleaning", "Create", "CleaningOrders")</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col product-container">
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item" style="height:300px">
+
+            <img class="img-responsive" title="Click to View Product detail"
+                 style="cursor:pointer;height:160px;width:100%"
+                 src="~/Images/fumigate.jpg" />
+
+            <div class="caption">
+                <h5>@Html.ActionLink("Request Fumigation", "Create", "FumigationOrders")</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col product-container">
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item" style="height:300px">
+
+            <img class="img-responsive" title="Click to View Product detail"
+                 style="cursor:pointer;height:160px;width:100%"
+                 src="~/Images/gardening.jpg" />
+
+            <div class="caption">
+                <h5>@Html.ActionLink("Request Gardening", "Create", "GardeningOrders")</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col product-container">
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item" style="height:300px">
+
+            <img class="img-responsive" title="Click to View Product detail"
+                 style="cursor:pointer;height:160px;width:100%"
+                 src="~/Images/l1.jpg" />
+
+            <div class="caption">
+                <h5>@Html.ActionLink("Variety Of Services", "Create", "CustomerEquipments")</h5>
+            </div>
+        </div>
+    </div>
+</div>

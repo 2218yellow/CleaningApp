@@ -1,0 +1,57 @@
+﻿@model IEnumerable<IzintoCleaning.Models.PostApplication>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.applicant.AppEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.post.PostDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClosingDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.applicant.AppEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.post.PostDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClosingDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.PostAppID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PostAppID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PostAppID })
+        </td>
+    </tr>
+}
+
+</table>

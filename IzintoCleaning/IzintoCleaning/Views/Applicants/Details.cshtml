@@ -1,0 +1,69 @@
+﻿@model IzintoCleaning.Models.Applicant
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Applicant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model.Files.Any(f => f.FileType == IzintoCleaning.Models.FileType.Avatar))
+        {
+            <dt>
+                Avatar
+            </dt>
+            <dd>
+                <a href="~/File?id=@Model.Files.First(f => f.FileType == IzintoCleaning.Models.FileType.Avatar).FileId"> Download</a>
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.AppName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppAdd)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AppID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<IzintoCleaning.Models.ServiceDesc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Service.SerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CritName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CritCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerBasic)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Service.SerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CritName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CritCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerBasic)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DescID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DescID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DescID })
+        </td>
+    </tr>
+}
+
+</table>

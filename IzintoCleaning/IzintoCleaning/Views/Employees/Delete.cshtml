@@ -1,0 +1,88 @@
+﻿@model IzintoCleaning.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Added By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admin.AdminName)
+        </dd>
+
+        <dt>
+            Worked In
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service.SerName)
+        </dd>
+
+        <dt>
+            Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+
+        <dt>
+            Surname
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpSurame)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpEmail)
+        </dd>
+
+        <dt>
+            Wage
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wage)
+        </dd>
+
+        <dt>
+            Wage
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpPhone)
+        </dd>
+
+        <dt>
+            Lives In
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpAddress)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

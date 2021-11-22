@@ -1,0 +1,67 @@
+﻿@model IzintoCleaning.Models.CustomerEquipment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerEquipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customer.CustName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer.CustName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.equipment.EquipName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.equipment.EquipName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

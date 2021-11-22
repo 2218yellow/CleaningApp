@@ -1,0 +1,81 @@
+﻿@model IEnumerable<IzintoCleaning.Models.CleaningOrder>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cleaning.PackageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpmloyeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.storey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.areacost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.floorcost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cleaning.PackageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.CustName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpmloyeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.storey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.areacost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.floorcost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Order_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Order_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Order_ID })
+        </td>
+    </tr>
+}
+
+</table>

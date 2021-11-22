@@ -1,0 +1,44 @@
+﻿@model IEnumerable<IzintoCleaning.Models.Equipment>
+    @using IzintoCleaning.Model
+
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog</h2>
+<div class="grid-container">
+    @foreach (var item in Model)
+    {
+        <dl class="dl-horizontal">
+            @if (Model.Equipment.Any(f => f.FileType == IzintoCleaning.Models.FileType.Avatar))
+            {
+                <dt>
+                    Avatar
+                </dt>
+                <dd>
+                    <img src="~/File?id=@Model.Files.First(f => f.FileType == IzintoCleaning.Models.FileType.Avatar).FileId" alt="avatar" width="80" height="80" />
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EquipName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EquipName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EquipType)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EquipType)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EquipCost)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EquipCost)
+                </dd>
+</div>

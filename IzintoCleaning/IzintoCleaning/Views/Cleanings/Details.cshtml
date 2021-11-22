@@ -1,0 +1,51 @@
+﻿@model IzintoCleaning.Models.Cleaning
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cleaning</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.service.SerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service.SerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostStorey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostStorey)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Package_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

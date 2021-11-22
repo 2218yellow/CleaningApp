@@ -1,0 +1,35 @@
+﻿@model IzintoCleaning.Models.GardenAssign
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GardenAssign</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GardenOrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

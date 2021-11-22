@@ -1,0 +1,51 @@
+﻿@model IEnumerable<IzintoCleaning.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Manage Your Suppliers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Added By
+        </th>
+        <th>
+           Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+           Phone Number
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.admin.AdminName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuppName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuppEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuppPhone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SuppID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SuppID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SuppID })
+        </td>
+    </tr>
+}
+
+</table>

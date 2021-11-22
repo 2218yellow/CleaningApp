@@ -1,0 +1,132 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/MyMainLayOut.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="logo">
+                    <h1><a @Html.ActionLink("Izinto Cleaning", "Index", "Home")</a></h1>
+                    <p>Services You Can Trust</p>
+                </div>
+            </div>
+            @*@{
+
+                var cart_Service = new IzintoCleaning.Models.Cart_Service();
+                decimal total = 0;
+            }*@
+            <div class="col-lg-6">
+                <div class="account">
+                    <ul>
+                        <li>
+                            <div class="hidden-xs">
+                                @Html.Partial("_LoginPartial")
+
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="nav-menus">
+
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                    <ul class="nav nav-pills">
+                        <li class="active" style="border-radius:initial;"> @Html.ActionLink("Home", "Index", "Home")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Suppliers", "Index", "Suppliers")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Services", "Index", "Services")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Employee", "Index", "Employees")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Equipment", "Index", "Equipments")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Assign Role", "AddRole", "Roles")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Cleaning Requests", "Index", "CleaningOrders")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Gardening Requests", "Index", "GardeningOrders")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Fumigate Requests", "Index", "FumigationOrders")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Register Admin", "AdminReg", "Account")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Fumigation", "Create", "Fumigations")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Cleaning", "Create", "Cleanings")</li>
+                        <li style="border-radius:initial;"> @Html.ActionLink("Gardening", "Create", "Gardenings")</li>
+                    </ul>
+                    }
+                    else
+                    {
+                        <ul class="nav nav-pills">
+                            <li class="active" style="border-radius:initial;"> @Html.ActionLink("Home", "Index", "Home")</li>
+                            <li style="border-radius:initial;"> @Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li style="border-radius:initial;"> @Html.ActionLink("Browse Equipment", "Index", "Shopping")</li>
+                            <li style="border-radius:initial;"> @Html.ActionLink("Garden", "Create", "GardeningOrders")</li>
+                            <li style="border-radius:initial;"> @Html.ActionLink("Clean", "Create", "CleaningOrders")</li>
+                            <li style="border-radius:initial;"> @Html.ActionLink("Fumigate", "Create", "FumigationOrders")</li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-list"></span>Shop <span class="caret"></span></a>
+                                <ul class="dropdown-menu mega scrollable-menu">
+
+
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i> <span> Cart</span>
+                                            (@Html.Action(actionName: "countCartItems", controllerName: "Shopping"))<span class="caret"></span>
+
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                    </li>
+
+                                    <li><a href="~/Shopping/Index"><i class="fa fa-circle-o"></i>  Shop More</a></li>
+
+                                    <li><a href="~/Shopping/ShoppingCart"><i class="fa fa-circle-o"></i>View Cart </a></li>
+
+
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+        <hr/>
+
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-lg-12 copyright">
+
+                    <div class="col-lg-6 col-sm-6 copyright-left">
+                        <p>&copy; @DateTime.Now.Year - Izinto Cleaning. All right reserved.</p>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6 copyright-right">
+
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

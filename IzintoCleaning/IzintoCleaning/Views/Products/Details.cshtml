@@ -1,0 +1,66 @@
+﻿@model IzintoCleaning.Models.Products
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Products</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.admin.AdminName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admin.AdminName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplier.SuppName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplier.SuppName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

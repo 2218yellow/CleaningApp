@@ -1,0 +1,73 @@
+﻿@model IzintoCleaning.Models.CustomerEquipment
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CustomerEquipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customer.CustName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer.CustName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.equipment.EquipName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.equipment.EquipName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalCost)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

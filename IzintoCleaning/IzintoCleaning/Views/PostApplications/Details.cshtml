@@ -1,0 +1,55 @@
+﻿@model IzintoCleaning.Models.PostApplication
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PostApplication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.applicant.AppEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.applicant.AppEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.post.PostDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.post.PostDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.postDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.wage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosingDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostAppID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

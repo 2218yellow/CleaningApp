@@ -1,0 +1,30 @@
+﻿@model IzintoCleaning.Models.PostApplication
+
+<table>
+
+   @* <tr>
+        <td>
+            <strong>@Html.Label("Service Name : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.SerCode, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>*@
+    <tr>
+        <td>
+            <strong>@Html.Label("Expected Wage : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.wage, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.Label("Post Description : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.postDescription, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.Label("Closing Date : ")</strong>
+        </td>
+        <td> @Html.DisplayFor(model => model.ClosingDate, new { htmlAttributes = new { @class = "form - control" } }) </td>
+    </tr>
+
+</table>

@@ -1,0 +1,79 @@
+﻿@model IzintoCleaning.Models.Equipment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Equipment</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 mb-5 ftco-animate">
+            @*<dl class="dl-horizontal">*@
+            @if (User.IsInRole("Admin"))
+            {
+                <b>
+                    Added By
+                </b>
+
+                <p>
+                    @Html.DisplayFor(model => model.admin.AdminName)
+                </p>
+            }
+            <b>
+                Supplier
+            </b>
+
+            <p>
+                @Html.DisplayFor(model => model.supplier.SuppName)
+            </p>
+
+            <b>
+               Name
+            </b>
+
+            <p>
+                @Html.DisplayFor(model => model.EquipName)
+            </p>
+
+            <b>
+               Used For
+            </b>
+
+            <p>
+                @Html.DisplayFor(model => model.EquipType)
+            </p>
+
+            <b>
+                Price
+            </b>
+
+            <p>
+                @Html.DisplayFor(model => model.EquipCost)
+            </p>
+
+            <b>
+                @Html.DisplayNameFor(model => model.QuantityInStock)
+            </b>
+
+            <p>
+                @Html.DisplayFor(model => model.QuantityInStock)
+            </p>
+        </div>
+
+        <div class="col-md-6 mb-5 ftco-animate">
+            <p>
+                <a href="data:image/png;base64,@Convert.ToBase64String(Model.Picture, 0, Model.Picture.Length)" class="image-popup"><img src="data:image/png;base64,@Convert.ToBase64String(Model.Picture, 0, Model.Picture.Length)" style="width: 300px; height: 300px" , class="img-fluid" alt="Colorlib Template"></a>
+            </p>
+         </div>
+
+        @* </dl> *@
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EquipID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

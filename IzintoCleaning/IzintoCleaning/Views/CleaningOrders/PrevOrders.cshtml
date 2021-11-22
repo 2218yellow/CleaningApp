@@ -1,0 +1,72 @@
+﻿@model IEnumerable<IzintoCleaning.Models.CleaningOrder>
+
+<p>
+    @Html.ActionLink("Request New Service", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustName)
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            House Size
+        </th>
+        <th>
+            Floors
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfService)
+        </th>
+        <th>
+            Payment
+        </th>
+        <th>
+           Assigned Employee
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.CustName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cleaning.PackageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area) sq meter
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.storey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentstatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpmloyeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<IzintoCleaning.Models.Employee>
+
+@{
+    ViewBag.Title = "List Of Employees";
+}
+
+<h2>Manage Your Employees</h2>
+<p>
+    @Html.ActionLink("Register Employee", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            Registered By
+        </th>
+        <th>
+            Works In
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Surname
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Wage
+        </th>
+        <th>
+           Phone Number
+        </th>
+        <th>
+            Lives At
+        </th>
+        <th>
+            Currently
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.admin.AdminName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.service.SerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpSurame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EmpID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EmpID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EmpID })
+            </td>
+        </tr>
+    }
+</table>
